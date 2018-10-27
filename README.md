@@ -10,8 +10,8 @@
   - **back_end** for the back_end engineer to send your PR notifitation.
 - The owner of this repo will inspect these requests and then merge to the **beta** branch. 
 ## Rule
-- You can frok it, than edit it in your repo. In the momnet you have done,you can use pull request to let me know that you have down it,And I will inspect whether it is OK or not and permit it(merge to "this" repo).
-- If you don't know what is pull request(PR),then you can click thsi [How to PR](https://gitbook.tw/chapters/github/pull-request.html), the author of this website explains crystal clear and also have execellent understanding on git.
+- You can frok it, than edit it in your repo.You can use pull request to let me know what you done. And I will inspect whether it is OK or not and permit it(merge to "this" repo).
+- If you don't know what is pull request(PR),then you can look this [How to PR](https://gitbook.tw/chapters/github/pull-request.html), the author of this website explains crystal clear and also have execellent understanding on git.
 - PR to the branch you've done with.
 ## About us
 - We are from National cheng Kung University
