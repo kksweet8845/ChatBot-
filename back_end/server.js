@@ -5,7 +5,8 @@ var app = express();
 
 const path = '../front_end';
 
-app.use(express.static(path));
+// about us website
+app.use(express.static(path + '/aboutUs'));
 
 app.listen(port,() => {
   console.log('Listening on port:',port);
