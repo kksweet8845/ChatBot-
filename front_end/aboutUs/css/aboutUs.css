@@ -33,6 +33,14 @@
     font-size: 150px!important;
 
   }
+  #chatIntro {
+    position: relative;
+    bottom: 100px;
+  }
+  div.ui.container h1.ui.icon.center.header div.content {
+    font-size: 80px;
+  } 
+
   img {
     width: inherit;
     max-width: 100%;
