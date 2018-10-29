@@ -83,6 +83,7 @@
   }
   div[id^="member"] {
     transition: all 1s ease;
+    height: 500px;
   }
   div[class^="member_content"]{
     height:0;
@@ -99,7 +100,10 @@
     
   }
   
-  
+  .footer {
+    background-color: #e91e63;
+    height: 80px;
+  } 
 
 
 
