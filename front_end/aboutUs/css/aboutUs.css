@@ -51,7 +51,7 @@
     display: block;
   }
   #member1 img {
-    content:url("ChatBot-web_design/front_end/aboutUs/pic/member2.png");
+    content:url("../pic/member2.png");
   }
 
   
