@@ -51,27 +51,27 @@
     display: block;
   }
   #member1 img {
-    content:url("pic/member2.png");
+    content:url("ChatBot-web_design/front_end/aboutUs/pic/member2.png");
   }
 
   
   #member2 img {
-    content:url("pic/member3.png");
+    content:url("ChatBot-web_design/front_end/aboutUs/pic/member3.png");
   }
 
   
-  #member3 img {
-    content:url("pic/member1.png");
+  #member3 img { 
+    content:url("ChatBot-web_design/front_end/aboutUs/pic/member1.png");
   }
 
 
   #member4 img {
-    content:url("pic/member4.png");
+    content:url("ChatBot-web_design/front_end/aboutUs/pic/member4.png");
   }
 
 
   #member5 img {
-    content:url("pic/member5.png");
+    content:url("ChatBot-web_design/front_end/aboutUs/pic/member5.png");
   }
 
   h1 {
