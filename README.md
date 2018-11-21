@@ -1,6 +1,14 @@
 # ChatBot
-- ChatBot UI interface  
+- ChatBot UI & UX
 - user can produce chat bot without coding ability
+
+# ChatBot UI 
+- [ChatBot](http://luffy.ee.ncku.edu.tw:11022/index.html)
+
+# Wp2018 Web Work (Updated)
+- [Student MongoDB](http://luffy.ee.ncku.edu.tw:12222/students.html) use mongoDB to realize.
+
+- [Sdutent MySQL](https://luffy.ee.ncku.edu.tw/~MathematiKai/sqltest/?fbclid=IwAR086SgRgfC7cBU7JVxc5v4jC3YdGmzhKt6PAR-t1UUCgEgox08RKG7C32g) use MySQL to realize.
 
 # Fork us
 - There are four branches named **master** , **ront_end** , **back_end** and **beta**.
@@ -13,7 +21,5 @@
 - You can frok it, than edit it in your repo.You can use pull request to let me know what you done. And I will inspect whether it is OK or not and permit it(merge to "this" repo).
 - If you don't know what is pull request(PR),then you can look this [How to PR](https://gitbook.tw/chapters/github/pull-request.html), the author of this website explains crystal clear and also have execellent understanding on git.
 - PR to the branch you've done with.
-## About us
-- We are from National cheng Kung University
-- It is an open source project and welcome to every one want to make this project better
+## [About us](http://luffy.ee.ncku.edu.tw:11022/aboutUs.html)
 
