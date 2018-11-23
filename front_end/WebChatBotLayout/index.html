@@ -3,15 +3,19 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="main.css">
+    <link id="bubblestyle" rel="stylesheet" href="bubblestyle1.css">
+    <link id="bubblestyleleft" rel="stylesheet" href="bubblestyle(left).css">
     <link id="fontstyle" rel="stylesheet" href="fontstyle2.css"> <!--Select fontstyle(.css)-->
     <link id="fontstyle2" rel="stylesheet" href="fontstyle4.css"> <!--Select boldfont(.css) or normalfont(.css)-->
+
     <link rel="shortcut icon" href="" type="image/png">
     <script src="main.js"></script>
     <script src="jquery.min.js"></script>
     <script src="fontsize.js"></script>
     <script src="fontstyle.js"></script>
+    <script src="index.js"></script>
+    <title>ChatBot</title>
 </head>
-<title>ChatBot</title>
 <body>
     <div class="NavBar">
         <a class="active" href="#home">Home</a>
@@ -147,22 +151,24 @@
 
             </div>
         </div>
-
         <div class="Display">
-            <div class="Window">
-                <div id="textInWindow" font-size="">
-                    ABC123 
-                </div>
-
+            <div class="Window" id="window">
+                <!--Bubble-->
+            </div>
+            <!--輸入-->
+            <div class="user">
+                <form id="ajax_form">
+                    <input type="text" name="fname" id="fname"><br>
+                    <button type="submit" id="btn">送出</button>
+                </form>
             </div>
         </div>
+    </div>
         <!--額外功能-->
         <div class="Unknown">
             <button>generate</button>
             <button>save</button>
         </div>
-    </div>
-
 </body>
 
 </html>

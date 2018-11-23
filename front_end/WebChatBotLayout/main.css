@@ -48,7 +48,6 @@ body {
     left: 0vw;
     top: 0vh;
     overflow: scroll;
-    
 }
 
 
@@ -56,7 +55,7 @@ body {
 .Display{
     position: relative;
     width: 50vw;
-    background-color: red;
+    background-color: lightgreen;
     height: inherit;
     float: left;
     top: 0vh;
@@ -64,14 +63,17 @@ body {
 
 .Window{
     position: absolute;
-    width: 95%;
-    height: 90%;
+    width: 94%;
+    height: 80%;
     background-color: aliceblue;
     top:0;
     right:0;
     bottom:0;
     left:0;
-    margin:auto;
+    margin-top:3%;
+    margin-left:2%;
+    margin-right:2%;
+    overflow: scroll;
 }
 
 .DEBUG{
@@ -156,4 +158,31 @@ body {
 
 .StyleTabContent button:hover{
     opacity: 0.5;
+}
+
+.user{
+    position:relative;
+    width:auto;
+    height:auto;
+    margin-top:80vh;
+    margin-left:2%;
+}
+
+#fname{
+    position:relative;
+    border:3px solid #cfe9ed;
+    top:-3vh;
+    height:11vh;
+    width:40vw;
+    font-size:24px;
+}
+
+#btn{
+    position:relative;
+    top:-15vh;
+    left:41vw;
+    height:12vh;
+    width:5vw;
+    background-color:lightpink;
+    border:3px solid #edcfe1;
 }

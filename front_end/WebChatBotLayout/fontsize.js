@@ -1,9 +1,10 @@
+var size;
+size = 28;
 $(function() {
-    var postBody = "#textInWindow", // 文章區塊
-        minSize = 16, // 最小文字 px 值
+    var postBody = ".bubble", // 文章區塊
+        minSize = 28, // 最小文字 px 值
         maxSize = 60, // 最大文字 px 值
-        addSize = 4, // 每次點擊按鈕增加的尺寸 px 值
-        size = parseInt(localStorage.postFontSize) || minSize;
+        addSize = 4; // 每次點擊按鈕增加的尺寸 px 值
     $(postBody).css("font-size", (localStorage.postFontSize || minSize) + "px");
     $("#enlarge_font_size").click(function() {
         size += addSize;
@@ -14,11 +15,10 @@ $(function() {
 });
 
 $(function() {
-    var postBody = "#textInWindow", // 文章區塊
-        minSize = 16, // 最小文字 px 值
+    var postBody = ".bubble", // 文章區塊
+        minSize = 28, // 最小文字 px 值
         maxSize = 60, // 最大文字 px 值
-        minusSize = 4, // 每次點擊按鈕減少的尺寸 px 值
-        size = parseInt(localStorage.postFontSize) || minSize;
+        minusSize = 4; // 每次點擊按鈕減少的尺寸 px 值
     $(postBody).css("font-size", (localStorage.postFontSize || minSize) + "px");
     $("#decrease_font_size").click(function() {
         size -= minusSize;
