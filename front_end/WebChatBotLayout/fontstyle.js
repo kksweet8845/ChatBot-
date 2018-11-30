@@ -1,3 +1,4 @@
+//FontStyle
 function ChangeFontStyle1(){
 var changefont = document.getElementById("fontstyle");
 changefont.href = "fontstyle1.css"
@@ -13,6 +14,8 @@ var changefont = document.getElementById("fontstyle");
 changefont.href = "fontstyle3.css"
 }
 
+
+//粗體or細體
 function ChangeFontStyle4(){
 var changefont = document.getElementById("fontstyle2");
 changefont.href = "fontstyle4.css"
