@@ -1,174 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="css/main.css">
-    <link id="bubblestyle" rel="stylesheet" href="css/bubblestyle1.css">
-    <link id="bubblestyleleft" rel="stylesheet" href="css/bubblestyle(left).css">
-    <link id="fontstyle" rel="stylesheet" href="css/fontstyle2.css"> <!--Select fontstyle(.css)-->
-    <link id="fontstyle2" rel="stylesheet" href="css/fontstyle4.css"> <!--Select boldfont(.css) or normalfont(.css)-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chatbot Generator</title>
 
-    <link rel="shortcut icon" href="" type="image/png">
-    <script src="js/main.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/fontsize.js"></script>
-    <script src="js/fontstyle.js"></script>
-    <script src="js/bubble.js"></script>
-    <title>ChatBot</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="styles/index.css">
+
+<!-- Scripts -->
 </head>
+
 <body>
-    <div class="NavBar">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+<!-- Top NavBar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-end"> <a class="navbar-brand ml-5" href="index.html" >Chatbot Generator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item"> <a class="nav-link btn" data-toggle="modal" data-target="#modal_about_us">About us</a> </li>
+    </ul>
+  </div>
+</nav>
+<!-- Container -->
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col container-chat">
+      <div class="row">
+        <div class="col chat_window bg-light">
+          <div class="display_section" style="height: 81vh"> Bot reply :<br>
+            <div id="bot"></div>
+          </div>
+          <div class="input-group mt-3">
+            <input type="text" class="form-control input_section" placeholder="Ask question here!" aria-label="Ask question here!" aria-describedby="btn_ask">
+            <div class="input-group-append">
+              <button class="btn btn-primary btn-size-small" type="submit" id="btn_ask">Ask</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="col" style="background-color: red !important;"> </div>
+  </div>
+</div>
+<!-- Botton NavBar -->
 
-    <div class="MainFrame">
-        <div class="ToolBar">
-            <div class="Select">
-                <div class="Option ">
-                    <button class="OptionTab" onclick="Select(event, 'Bubble',true)">Bubble</button>
-                    <button class="OptionTab" onclick="Select(event, 'Frame',true)">Frame</button>
-                    <button class="OptionTab" onclick="Select(event, 'Font',true)">Font</button>
-                </div>
-
-                <div class="Property ">
-                    <button class="PropertyTab Bubble Frame" onclick="Select(event, 'Color',false)">Color</button>
-                    <button class="PropertyTab Bubble" onclick="Select(event, 'Style',false)">Style</button>
-                    <button class="PropertyTab Frame" onclick="Select(event, 'Background',false)">Background</button>
-                    <button class="PropertyTab Font" onclick="Select(event, 'FontStyle',false)">FontStyle</button>
-                    <button class="PropertyTab Font Size" onclick="Select(event, 'FontSize',false)">FontSize</button>
-                </div>
-            </div>
-
-
-            <!--Color-->
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(204, 14, 14)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(77, 245, 26)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(17, 0, 255)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(131, 75, 45)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            <div class="Color StyleTabContent">
-                <button style="background-color:rgb(251, 255, 0)" onclick=selectTest(event)></button>
-            </div>
-            
-
-            <!--Style-->
-            <div class="Style StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Style StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Style StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Style StyleTabContent">
-                <button></button>
-            </div>
-
-            <!--Background-->
-            <div class="Background StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Background StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Background StyleTabContent">
-                <button></button>
-            </div>
-            <div class="Background StyleTabContent">
-                <button></button>
-            </div>
-
-            <!--FontStyle-->
-            <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle1()" style="font-family:DFKai-sb">標楷體</button>
-            </div>
-
-            <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle2()" style="font-family:PMingLiU">新細明體</button>
-            </div>
-
-            <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle3()" style="font-family:Microsoft JhengHei">微軟正黑體</button>
-            </div>
-
-            <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle4()" style="font-weight:normal">細體</button>
-            </div>
-
-            <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle5()" style="font-weight:bold">粗體</button>
-            </div>
-
-            <!--FontSize-->
-            <div class="FontSize StyleTabContent">
-                <button id="enlarge_font_size" title="字體變大">A+</button>
-            </div>
-
-            <div class="FontSize StyleTabContent">
-                <button id="decrease_font_size" title="字體縮小">A-</button>
-            </div>
-    
-            <!-- Color DEBUG-->
-            <div class="DEBUG" style="position:absolute;bottom:0;height:40px;width:40px">
-
-            </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom justify-content-end"> <a class="navbar-brand ml-5" href="index.html" >Toolbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_btm"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar_btm">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropup"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_bubble" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bubble</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown_bubble">
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_bubble_color">Bubble Color</button>
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_bubble_style">Bubble Style</button>
         </div>
-        <div class="Display">
-            <div class="Window" id="window">
-                <!--Bubble-->
-            </div>
-            <!--輸入-->
-            <div class="user">
-                <form id="ajax_form">
-                    <input type="text" name="fname" id="fname"><br>
-                    <button type="submit" id="btn">送出</button>
-                </form>
-            </div>
+      </li>
+      <li class="nav-item dropup"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_bg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Background</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown_bg">
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_bg_color">Background Color</button>
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_bg_image">Background Image</button>
         </div>
+      </li>
+      <li class="nav-item dropup"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_font" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown_bg">
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_font_style">Font Style</button>
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_font_color">Font Color</button>
+          <button class="dropdown-item" data-toggle="modal" data-target="#modal_font_size">Font Size</button>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <div class="row">
+		<button class="btn btn-light btn-size-small mr-2 ml-2">Choose File</button>
+        <button class="btn btn-light btn-size-small mr-2"></button>
+        <button class="btn btn-light btn-size-small mr-2 ml-2">Generate</button>
+        <button class="btn btn-light btn-size-small mr-2">Save</button>
+      </div>
+    </ul>
+  </div>
+</nav>
+<div class="modal fade" id="modal_bubble_color" tabindex="-1" role="dialog" aria-labelledby="label_bubble_color" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_bubble_color">Edit Bubble Color</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-color mt-1 btn-red" id="bubble_red"></button>
+        <button class="btn btn-color mt-1 btn-org" id="bubble_org"></button>
+        <button class="btn btn-color mt-1 btn-yel" id="bubble_yel"></button>
+        <button class="btn btn-color mt-1 btn-gre" id="bubble_gre"></button>
+        <button class="btn btn-color mt-1 btn-blu" id="bubble_blu"></button>
+        <button class="btn btn-color mt-1 btn-whi" id="bubble_whi">WHITE</button>
+        <button class="btn btn-color mt-1 btn-blk" id="bubble_blk"></button>
+        <button class="btn btn-color mt-1 btn-gry" id="bubble_gry"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
     </div>
-        <!--額外功能-->
-        <div class="Unknown">
-            <button>generate</button>
-            <button>save</button>
-        </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_bubble_style" tabindex="-1" role="dialog" aria-labelledby="label_bubble_style" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_bubble_style">Edit Bubble Style</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">Coming soon..</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_bg_color" tabindex="-1" role="dialog" aria-labelledby="label_bg_color" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_bg_color">Edit Background Color</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-color mt-1 btn-red" id="bg_red"></button>
+        <button class="btn btn-color mt-1 btn-org" id="bg_org"></button>
+        <button class="btn btn-color mt-1 btn-yel" id="bg_yel"></button>
+        <button class="btn btn-color mt-1 btn-gre" id="bg_gre"></button>
+        <button class="btn btn-color mt-1 btn-blu" id="bg_blu"></button>
+        <button class="btn btn-color mt-1 btn-whi" id="bg_whi">WHITE</button>
+        <button class="btn btn-color mt-1 btn-blk" id="bg_blk"></button>
+        <button class="btn btn-color mt-1 btn-gry" id="bg_gry"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_bg_image" tabindex="-1" role="dialog" aria-labelledby="label_bg_image" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_bg_image">Edit Background Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">Coming soon..</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_font_style" tabindex="-1" role="dialog" aria-labelledby="label_font_style" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_font_style">Edit Font Style</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-lg mt-1 btn-light" id="font_a" onclick="ChangeFontStyle1()" style="font-family:DFKai-sb !important">標楷體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_b" onclick="ChangeFontStyle2()" style="font-family:PMingLiU !important">新細明體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_c" onclick="ChangeFontStyle3()" style="font-family:Microsoft JhengHei !important">微軟正黑體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_d" onclick="ChangeFontStyle4()" style="font-weight:normal !important">細體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_e" onclick="ChangeFontStyle5()" style="font-weight:bold !important">粗體</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_font_color" tabindex="-1" role="dialog" aria-labelledby="label_font_color" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_font_color">Edit Font Color</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-color mt-1 btn-red" id="font_red"></button>
+        <button class="btn btn-color mt-1 btn-org" id="font_org"></button>
+        <button class="btn btn-color mt-1 btn-yel" id="font_yel"></button>
+        <button class="btn btn-color mt-1 btn-gre" id="font_gre"></button>
+        <button class="btn btn-color mt-1 btn-blu" id="font_blu"></button>
+        <button class="btn btn-color mt-1 btn-whi" id="font_whi">WHITE</button>
+        <button class="btn btn-color mt-1 btn-blk" id="font_blk"></button>
+        <button class="btn btn-color mt-1 btn-gry" id="font_gry"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_font_size" tabindex="-1" role="dialog" aria-labelledby="label_font_size" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_font_size">Edit Font Size</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-lg mt-1 btn-light" id="enlarge_font_size">A+</button>
+        <button class="btn btn-lg mt-1 btn-light" id="decrease_font_size">A-</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal_about_us" tabindex="-1" role="dialog" aria-labelledby="label_about_us" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_about_us">About US</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p class="h5">組長 : 林慶瑞 - 資訊108</p>
+        <p class="h5">組員 : 王皓玄 - 資訊108</p>
+        <p class="h5">組員 : 戴宏諺 - 資訊110</p>
+        <p class="h5">組員 : 張復凱 - 電機109</p>
+        <p class="h5">組員 : 蔡慶霖 - 電機109</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts --> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>

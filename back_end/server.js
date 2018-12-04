@@ -13,7 +13,17 @@ app.use(express.static(path + '/aboutUs'));
 app.use(express.static(path + '/accessFile'));
 app.use(express.static(path + '/WebChatBotLayout'));
 
-
+app.post('/ask',(req,res)=>{
+  var form = new formidable.IncomingForm();
+  form.parse(req,(err,fields,files)=>{
+    var question = fields['userQ'];
+    var obj = JSON.parse(fs.readFileSync(__dirname + '/uploaded/jsonFile/defaultQA.json','utf8'));
+    bigram.evalQuery(question,obj,(err,max_index)=>{
+      if(err) return res.send(err);
+      res.send(obj.conversations[max_index].A);
+    });
+  });
+});
 app.post('/testQuest',(req,res)=>{
       var form = new formidable.IncomingForm();
       form.parse(req,(err,fields,files)=>{
