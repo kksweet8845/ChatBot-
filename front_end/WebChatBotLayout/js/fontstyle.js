@@ -25,3 +25,10 @@ function ChangeFontStyle5(){
 var changefont = document.getElementById("fontstyle2");
 changefont.href = "fontstyle5.css"
 }
+
+
+function ChangeFontStyle4(){
+  
+  var changefont = $(".text p").addClass("bubble1");
+
+}

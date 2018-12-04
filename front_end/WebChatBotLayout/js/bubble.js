@@ -25,4 +25,7 @@ $(document).ready(function() {
           var div = document.getElementById('window');
           div.scrollTop = div.scrollHeight;
     }
+
+
+    
 }); 
