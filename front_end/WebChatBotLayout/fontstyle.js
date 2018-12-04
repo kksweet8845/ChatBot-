@@ -1,27 +1,34 @@
-//FontStyle
-function ChangeFontStyle1(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle1.css"
-}
+$(document).ready(function() {  
+    $("#ft1").click(function(event) {
+        event.preventDefault();
+        $(".text p").removeClass("bubble2").removeClass("bubble3"); 
+        $(".text p").addClass("bubble1");
+    });
 
-function ChangeFontStyle2(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle2.css"
-}
+    $("#ft2").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble1").removeClass("bubble3"); 
+        $(".text p").addClass("bubble2");
+    });
 
-function ChangeFontStyle3(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle3.css"
-}
+    $("#ft3").click(function(event) {
+        event.preventDefault();
+        $(".text p").removeClass("bubble1").removeClass("bubble2");
+   		$(".text p").addClass("bubble3")
+    });
+
+    $("#ft4").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble5");
+        $(".text p").addClass("bubble4");
+    });
+
+    $("#ft5").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble4");
+        $(".text p").addClass("bubble5");
+    });
+});
 
 
-//粗體or細體
-function ChangeFontStyle4(){
-var changefont = document.getElementById("fontstyle2");
-changefont.href = "fontstyle4.css"
-}
 
-function ChangeFontStyle5(){
-var changefont = document.getElementById("fontstyle2");
-changefont.href = "fontstyle5.css"
-}

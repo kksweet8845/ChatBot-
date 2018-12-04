@@ -3,10 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="main.css">
-    <link id="bubblestyle" rel="stylesheet" href="bubblestyle1.css">
-    <link id="bubblestyleleft" rel="stylesheet" href="bubblestyle(left).css">
-    <link id="fontstyle" rel="stylesheet" href="fontstyle2.css"> <!--Select fontstyle(.css)-->
-    <link id="fontstyle2" rel="stylesheet" href="fontstyle4.css"> <!--Select boldfont(.css) or normalfont(.css)-->
+    <link id ="bubblestyle" rel="stylesheet" href="ChatUI.css">
+    <link id="fontstyle1" rel="stylesheet" href="fontstyle1.css"> <!--Select fontstyle(.css)-->
 
     <link rel="shortcut icon" href="" type="image/png">
     <script src="main.js"></script>
@@ -118,23 +116,23 @@
 
             <!--FontStyle-->
             <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle1()" style="font-family:DFKai-sb">標楷體</button>
+                <button id="ft1" style="font-family:DFKai-sb">標楷體</button>
             </div>
 
             <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle2()" style="font-family:PMingLiU">新細明體</button>
+                <button id="ft2" style="font-family:PMingLiU">新細明體</button>
             </div>
 
             <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle3()" style="font-family:Microsoft JhengHei">微軟正黑體</button>
+                <button id="ft3" style="font-family:Microsoft JhengHei">微軟正黑體</button>
             </div>
 
             <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle4()" style="font-weight:normal">細體</button>
+                <button id="ft4" style="font-weight:normal">細體</button>
             </div>
 
             <div class="FontStyle StyleTabContent">
-                <button onclick="ChangeFontStyle5()" style="font-weight:bold">粗體</button>
+                <button id="ft5" style="font-weight:bold">粗體</button>
             </div>
 
             <!--FontSize-->
@@ -153,6 +151,7 @@
         </div>
         <div class="Display">
             <div class="Window" id="window">
+
                 <!--Bubble-->
             </div>
             <!--輸入-->
@@ -168,7 +167,7 @@
         <div class="Unknown">
             <button>generate</button>
             <button>save</button>
-        </div>
+        </div>     
 </body>
 
 </html>
