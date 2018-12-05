@@ -35,8 +35,29 @@ app.post('/testQuest',(req,res)=>{
         });
       });
 });
+app.post('/server',(req,res)=>{
+      var form = new formidable.IncomingForm();
+      form.uploadDir = __dirname;
+      form.parse(req,(err,fields,files)=>{
+        var oldPath = files.fileUpload.path;
+        var newPath = __dirname + '/uploaded/txtFile/'+files.fileUpload.name;
+        fs.rename(oldPath,newPath,(err)=>{
+          if(err) throw err;
+          res.status(200).send(files.fileUpload.name);
+          res.end();
 
-
+          var bigramObj;
+          bigram.txtToJson(newPath,(obj)=>{
+            bigram.schemaFormation(obj,(obj)=>{
+              var json = JSON.stringify(obj);
+              fs.writeFile(__dirname+'/uploaded/jsonFile/defaultQA.json',json,(err)=>{
+                console.log('The file has been saved!');
+              });
+            });
+          });
+        });
+      });
+});
 app.listen(port,() => {
   console.log('Listening on port:',port);
 });

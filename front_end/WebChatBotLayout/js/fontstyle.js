@@ -1,34 +1,35 @@
-//FontStyle
-function ChangeFontStyle1(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle1.css"
-}
+$(document).ready(function() {
+    $("#font_a").click(function(event) {
+        event.preventDefault();
+        console.log("clicked");
+        $(".text p").removeClass("bubble2").removeClass("bubble3"); 
+        $(".text p").addClass("bubble1");
+    });
 
-function ChangeFontStyle2(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle2.css"
-}
+    $("#font_b").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble1").removeClass("bubble3"); 
+        $(".text p").addClass("bubble2");
+    });
 
-function ChangeFontStyle3(){
-var changefont = document.getElementById("fontstyle");
-changefont.href = "fontstyle3.css"
-}
+    $("#font_c").click(function(event) {
+        event.preventDefault();
+        $(".text p").removeClass("bubble1").removeClass("bubble2");
+        $(".text p").addClass("bubble3")
+    });
+
+    $("#font_d").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble5");
+        $(".text p").addClass("bubble4");
+    });
+
+    $("#font_e").click(function(event) {
+        event.preventDefault(); 
+        $(".text p").removeClass("bubble4");
+        $(".text p").addClass("bubble5");
+    });
+});
 
 
-//粗體or細體
-function ChangeFontStyle4(){
-var changefont = document.getElementById("fontstyle2");
-changefont.href = "fontstyle4.css"
-}
 
-function ChangeFontStyle5(){
-var changefont = document.getElementById("fontstyle2");
-changefont.href = "fontstyle5.css"
-}
-
-
-function ChangeFontStyle4(){
-  
-  var changefont = $(".text p").addClass("bubble1");
-
-}

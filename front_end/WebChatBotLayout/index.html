@@ -11,8 +11,15 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="css/index.css">
-
+<link rel="stylesheet" href="css/fontstyle1.css"> <!--Select fontstyle(.css)-->
+<link rel="stylesheet" href="css/ChatUI.css">
 <!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<script src="js/background.js"></script>
+<script src="js/fontsize.js"></script>
+<script src="js/fontstyle.js"></script>
+<script src="js/bubble.js"></script>
 </head>
 
 <body>
@@ -33,19 +40,20 @@
     <div class="col container-chat">
       <div class="row">
         <div class="col chat_window bg-light">
-          <div class="display_section" style="height: calc(100vh - 180px);"> Bot reply :<br>
-            <div id="window"></div>
+          <div class="display_section" style="height: calc(100vh - 180px);" id = "window">
           </div>
           <div class="input-group mt-3">
-            <input type="text" class="form-control input_section" placeholder="Ask question here!" aria-label="Ask question here!" aria-describedby="btn_ask">
+            <input type="text" class="form-control input_section" placeholder="Ask question here!" aria-label="Ask question here!" aria-describedby="btn_ask" id = "userQuestion">
             <div class="input-group-append">
               <button class="btn btn-primary btn-size-small" type="submit" id="btn_ask">Ask</button>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
-    <div class="col" style="background-color: red !important;"> </div>
+    <div class="col" style="background-color: lightpink !important;">
+    
+    </div>
   </div>
 </div>
 <!-- Botton NavBar -->
@@ -130,14 +138,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
       </div>
       <div class="modal-body">
-        <button class="btn btn-color mt-1 btn-red" id="bg_red"></button>
-        <button class="btn btn-color mt-1 btn-org" id="bg_org"></button>
-        <button class="btn btn-color mt-1 btn-yel" id="bg_yel"></button>
-        <button class="btn btn-color mt-1 btn-gre" id="bg_gre"></button>
-        <button class="btn btn-color mt-1 btn-blu" id="bg_blu"></button>
-        <button class="btn btn-color mt-1 btn-whi" id="bg_whi">WHITE</button>
-        <button class="btn btn-color mt-1 btn-blk" id="bg_blk"></button>
-        <button class="btn btn-color mt-1 btn-gry" id="bg_gry"></button>
+        <button class="btn btn-color mt-1 btn-0" id="bg_0"></button>
+        <button class="btn btn-color mt-1 btn-1" id="bg_1"></button>
+        <button class="btn btn-color mt-1 btn-2" id="bg_2"></button>
+        <button class="btn btn-color mt-1 btn-3" id="bg_3"></button>
+        <button class="btn btn-color mt-1 btn-4" id="bg_4"></button>
+        <button class="btn btn-color mt-1 btn-5" id="bg_5">WHITE</button>
+        <button class="btn btn-color mt-1 btn-6" id="bg_6"></button>
+        <button class="btn btn-color mt-1 btn-7" id="bg_7"></button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -169,11 +177,11 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
       </div>
       <div class="modal-body">
-        <button class="btn btn-lg mt-1 btn-light" id="font_a" onclick="ChangeFontStyle1()" style="font-family:DFKai-sb !important">標楷體</button>
-        <button class="btn btn-lg mt-1 btn-light" id="font_b" onclick="ChangeFontStyle2()" style="font-family:PMingLiU !important">新細明體</button>
-        <button class="btn btn-lg mt-1 btn-light" id="font_c" onclick="ChangeFontStyle3()" style="font-family:Microsoft JhengHei !important">微軟正黑體</button>
-        <button class="btn btn-lg mt-1 btn-light" id="font_d" onclick="ChangeFontStyle4()" style="font-weight:normal !important">細體</button>
-        <button class="btn btn-lg mt-1 btn-light" id="font_e" onclick="ChangeFontStyle5()" style="font-weight:bold !important">粗體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_a"  style="font-family:DFKai-sb !important">標楷體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_b"  style="font-family:PMingLiU !important">新細明體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_c"  style="font-family:Microsoft JhengHei !important">微軟正黑體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_d"  style="font-weight:normal !important">細體</button>
+        <button class="btn btn-lg mt-1 btn-light" id="font_e"  style="font-weight:bold !important">粗體</button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -251,22 +259,23 @@
         <h5 class="modal-title" id="label_upload">Upload file</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
       </div>
-      <div class="modal-body"> 
+        <div class="modal-body">
         <form method="POST" name="fileInfo" enctype="multipart/form-data">
-          <input type="file" name="fileUpload">
+            <input type="file" name="fileUpload">
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal" id="submt">Submit</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" id = "submt">Submit</button>
+        </div>
     </div>
   </div>
 </div>
 
-<!-- Scripts --> 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+<!-- Scripts -->
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
