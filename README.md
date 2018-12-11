@@ -32,4 +32,3 @@ may use similar question to get the same bot reply such as : 你最近好嘛 or 
 - PR to the branch you've done with.
 ## [About us](http://luffy.ee.ncku.edu.tw:11022/aboutUs.html)
 
-# happy210168.github.io
