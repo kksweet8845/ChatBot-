@@ -14,11 +14,13 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/fontstyle1.css"> <!--Select fontstyle(.css)-->
 <link rel="stylesheet" href="css/ChatUI.css">
+<link rel="stylesheet" href="css/semantic.min.css">
 <!-- chat preview CSS -->
 <link rel="stylesheet" href="css/chat.css" type="text/css">
 <!-- Scripts -->
 <script src="js/jquery.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<script src="js/semantic.min.js"></script>
 <script src="js/background.js"></script>
 <script src="js/fontsize.js"></script>
 <script src="js/fontstyle.js"></script>
@@ -34,7 +36,15 @@
     <ul class="navbar-nav mr-auto">
     </ul>
     <ul class="navbar-nav">
-      <li class="nav-item"> <a class="nav-link btn" data-toggle="modal" data-target="#modal_about_us">About us</a> </li>
+      <li class="nav-item"> 
+        <a class="nav-link btn" data-toggle="modal" data-target="#modal_signup">Sign up</a> 
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn" data-toggle="modal" data-target="#modal_login">Log in</a>
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link btn" data-toggle="modal" data-target="#modal_about_us">About us</a> 
+      </li>
     </ul>
   </div>
 </nav>
@@ -304,10 +314,91 @@
   </div>
 </div>
 
+<div class="modal fade " id="modal_signup" tabindex="-1" role="dialog" aria-labelledby="label_signup" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_signup">Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <form class="ui form segment">
+          <div class="two fields">
+            <div class="field">
+              <label>First Name</label>
+              <input placeholder="First Name" name="first-name" type="text">
+            </div>
+            <div class="field">
+              <label>Last Name</label>
+              <input placeholder="Last Name" name="last-name" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <label>Username</label>
+            <input placeholder="Username" name="username" type="text">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" name="password">
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="terms">
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+          </div>
+          <div class="ui primary submit button">Submit</div>
+          <div class="ui error message"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="modal_login" tabindex="-1" role="dialog" aria-labelledby="label_login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="label_login">Log in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="ui form segment">
+          
+          <div class="field">
+            <label>Username</label>
+            <input placeholder="Username" name="username_log" type="text" id="username_log">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input placeholder="Password" type="password" name="password_log" id="password_log">
+          </div>
+          
+          <div class="ui primary submit button" id="LogIn">Submit</div>
+          <div class="ui error message"></div>
+        </form>
+          
+      <div class="ui secondary submit button" data-toggle="modal" data-target="#modal_signup" data-dismiss="modal">
+        Sign up</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Scripts -->
 
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/signup.js"></script>
+<script src="js/login_post.js"></script>
 </body>
 </html>
